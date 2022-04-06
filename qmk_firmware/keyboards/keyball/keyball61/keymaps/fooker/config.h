@@ -33,4 +33,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define RGBLIGHT_EFFECT_TWINKLE
 #endif
 
+#define RGBLIGHT_LAYERS
+
 #define TAPPING_TOGGLE 2
