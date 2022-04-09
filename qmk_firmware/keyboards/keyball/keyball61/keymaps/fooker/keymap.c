@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LGUI  , DE_Q     , DE_W     , DE_E     , DE_R     , DE_T     ,                                  DE_Z     , DE_U     , DE_I     , DE_O     , DE_P     , KC_RGUI  ,
     KC_LSFT  , DE_A     , DE_S     , DE_D     , DE_F     , DE_G     ,                                  DE_H     , DE_J     , DE_K     , DE_L     , DE_COLN  , KC_RSFT  ,
     OSL(1)   , DE_Y     , DE_X     , DE_C     , DE_V     , DE_B     , OSL(4)   ,             _______ , DE_N     , DE_M     , DE_COMM  , DE_DOT   , DE_MINS  , OSL(1)   ,
-    KC_LCTL  , KC_LALT  , _______  , _______  , TT(2)    , KC_SPC   , KC_BSPC  ,        LT(3,KC_TAB) , KC_ENT   , XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_SLSH  , KC_RCTL
+    KC_LCTL  , KC_LALT  , _______  , _______  , TT(2)    ,LT(1,KC_SPC),KC_BSPC  ,      LT(3,KC_TAB),LT(1,KC_ENT), XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_SLSH  , KC_RCTL
   ),
 
   [1] = LAYOUT_universal(
@@ -65,6 +65,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 // clang-format on
+
+bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
+  switch(keycode) {
+    case KC_A:
+    case KC_O:
+    case KC_U:
+    case KC_S:
+      return true;
+    default:
+      return false;
+  }
+}
+
+
 
 #ifdef OLED_ENABLE
 
