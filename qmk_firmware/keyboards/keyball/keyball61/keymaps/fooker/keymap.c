@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                                  KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11   ,
     _______  , DE_EXLM  , DE_AT    , DE_LCBR  , DE_RCBR  , DE_PIPE  ,                                  DE_QUOT  , DE_UDIA  , DE_CIRC  , DE_ODIA  , DE_ASTR  , KC_F12   ,
     _______  , DE_ADIA  , DE_SS    , DE_LPRN  , DE_RPRN  , DE_GRV   ,                                  DE_DQUO  , DE_EQL   , DE_DLR   , DE_HASH  , DE_SCLN  , _______  ,
-    _______  , DE_PERC  , DE_PLUS  , DE_LBRC  , DE_RBRC  , DE_TILD  , _______  ,            _______  , DE_AMPR  , DE_LABK  , DE_RABK  , _______  , DE_UNDS  , _______  ,
+    _______  , DE_PLUS  , DE_PERC  , DE_LBRC  , DE_RBRC  , DE_TILD  , _______  ,            _______  , DE_AMPR  , DE_LABK  , DE_RABK  , _______  , DE_UNDS  , _______  ,
     _______  , _______  , _______  , _______  , _______  , _______  , KC_DEL   ,            KC_INS   , _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_BSLS  , KC_CAPS
   ),
 
