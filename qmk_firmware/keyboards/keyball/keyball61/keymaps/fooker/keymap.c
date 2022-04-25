@@ -66,30 +66,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-  switch(keycode) {
-    case KC_A:
-    case KC_O:
-    case KC_U:
-    case KC_S:
-      return true;
-    default:
-      return false;
-  }
-}
-
-
-
-#ifdef OLED_ENABLE
-
-#    include "lib/oledkit/oledkit.h"
-
-void oledkit_render_info_user(void) {
-    keyball_oled_render_keyinfo();
-    keyball_oled_render_ballinfo();
-}
-#endif
-
 const rgblight_segment_t PROGMEM my_layer_caps[] = RGBLIGHT_LAYER_SEGMENTS(
         {0, RGBLED_NUM, HSV_RED}
 );
