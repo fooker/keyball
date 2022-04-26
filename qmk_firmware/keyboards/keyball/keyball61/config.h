@@ -73,6 +73,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define LAYER_STATE_8BIT
 #endif
 
+// Ball sensor config
+#define PMW3360_SPI_MODE 3
+#define PMW3360_CLOCK_SPEED 2000000
+#define PMW3360_CS_PIN B6
+#define PMW3360_CPI 800
+
+#define POINTING_DEVICE_ROTATION_90
+#define POINTING_DEVICE_INVERT_X
+#define POINTING_DEVICE_TASK_THROTTLE_MS 1
+
 // To squeeze firmware size
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
