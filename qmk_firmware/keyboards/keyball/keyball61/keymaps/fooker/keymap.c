@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+#include "deferred_exec.h"
 #include "rgblight/rgblight.h"
 #include "keymap_german.h"
 
@@ -110,5 +111,25 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(3, layer_state_cmp(state, 3));
     rgblight_set_layer_state(4, layer_state_cmp(state, 4));
     return state;
+}
+
+deferred_token mouse_layer_token = INVALID_DEFERRED_TOKEN;
+
+uint32_t mouse_layer_cb(uint32_t trigger_time, void *cb_arg) {
+    layer_off(2);
+    mouse_layer_token = INVALID_DEFERRED_TOKEN;
+    return 0;
+}
+
+report_mouse_t pointing_device_task_user(report_mouse_t report) {
+    if (report.x != 0 && report.y != 0) {
+        layer_on(2);
+	if (mouse_layer_token == INVALID_DEFERRED_TOKEN) {
+            mouse_layer_token = defer_exec(1000, mouse_layer_cb, NULL);
+	} else {
+            extend_deferred_exec(mouse_layer_token, 1000);
+        }
+    }
+    return report;
 }
 
