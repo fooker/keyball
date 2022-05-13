@@ -25,3 +25,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 #define RGBLIGHT_LAYERS
 
+#define TAPPING_FORCE_HOLD
+

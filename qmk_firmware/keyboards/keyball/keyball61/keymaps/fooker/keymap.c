@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LGUI  , DE_Q     , DE_W     , DE_E     , DE_R     , DE_T     ,                                  DE_Z     , DE_U     , DE_I     , DE_O     , DE_P     , KC_RGUI  ,
     KC_LSFT  , DE_A     , DE_S     , DE_D     , DE_F     , DE_G     ,                                  DE_H     , DE_J     , DE_K     , DE_L     , DE_COLN  , KC_RSFT  ,
     _______  , DE_Y     , DE_X     , DE_C     , DE_V     , DE_B     , OSL(4)   ,             TG(2)   , DE_N     , DE_M     , DE_COMM  , DE_DOT   , DE_MINS  , _______  ,
-    KC_LCTL  , KC_LALT  , _______  , _______  , MO(2)    ,LT(1,KC_SPC),KC_BSPC  ,      LT(3,KC_TAB),LT(1,KC_ENT), XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_SLSH  , KC_RCTL
+    KC_LCTL  , KC_LALT  , _______  , _______  , MO(2)    ,LT(1,KC_SPC),KC_BSPC  ,    LT(3,KC_TAB),LSFT_T(KC_ENT), XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_SLSH  , KC_RCTL
   ),
 
   [1] = LAYOUT_universal(
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , DE_EXLM  , DE_AT    , DE_LCBR  , DE_RCBR  , DE_PIPE  ,                                  DE_QUOT  , DE_UDIA  , DE_CIRC  , DE_ODIA  , DE_ASTR  , KC_F12   ,
     _______  , DE_ADIA  , DE_SS    , DE_LPRN  , DE_RPRN  , DE_GRV   ,                                  DE_DQUO  , DE_EQL   , DE_DLR   , DE_HASH  , DE_SCLN  , _______  ,
     _______  , DE_PLUS  , DE_PERC  , DE_LBRC  , DE_RBRC  , DE_TILD  , _______  ,            _______  , DE_AMPR  , DE_LABK  , DE_RABK  , _______  , DE_UNDS  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  , KC_DEL   ,            KC_INS   , _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_BSLS  , KC_CAPS
+    _______  , _______  , _______  , _______  , _______  , _______  , KC_DEL   ,            KC_INS   , KC_RSFT  , XXXXXXX  , XXXXXXX  , XXXXXXX  , DE_BSLS  , KC_CAPS
   ),
 
   [2] = LAYOUT_universal(
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , _______  , KC_7     , KC_8     , KC_9     , _______  ,                                  _______  , KC_PGUP  , KC_UP    , KC_PGDN  , _______  , _______  ,
     _______  , _______  , KC_4     , KC_5     , KC_6     , _______  ,                                  KC_HOME  , KC_LEFT  , KC_DOWN  , KC_RGHT  , KC_END   , _______  ,
     _______  , _______  , KC_1     , KC_2     , KC_3     , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , KC_0     , KC_DOT   , _______  , _______  ,            _______  , _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  , _______
+    _______  , _______  , _______  , KC_0     , KC_DOT   , KC_SPC   , KC_DEL   ,            _______  , KC_ENT   , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  , _______
   ),
 
   [4] = LAYOUT_universal(
