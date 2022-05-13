@@ -41,8 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT       1000
 
-#define SPLIT_TRANSACTION_IDS_KB KEYBALL_GET_INFO, KEYBALL_GET_MOTION, KEYBALL_SET_CPI
-
 // RGB LED settings
 #define RGB_DI_PIN          D3
 #ifdef RGBLIGHT_ENABLE
