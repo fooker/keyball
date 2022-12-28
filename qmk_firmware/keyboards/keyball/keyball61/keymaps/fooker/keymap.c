@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , _______  , _______  , _______  , _______  , _______  ,                                  KC_DEL   , KC_PGUP  , KC_UP    , KC_PGDN  , KC_INS   , _______  ,
     _______  , KC_LALT  , KC_LCTL  , KC_LGUI  , KC_LSFT  , _______  ,                                  KC_HOME  , KC_LEFT  , KC_DOWN  , KC_RGHT  , KC_END   , _______  ,
     _______  , _______  , _______  , _______  , _______  , _______  , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , KC_SPC   , KC_DEL   ,            _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  , _______
+    _______  , _______  , _______  , _______  , _______  , _______  , KC_DEL   ,            _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  , _______
   ),
 
   [4] = LAYOUT_universal(
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                                  KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   , _______  ,
     _______  , LA(KC_1) , LC(KC_2) , LG(KC_3) , LS(KC_4) , KC_5     ,                                  KC_6     , RS(KC_7) , RG(KC_8) , RC(KC_9) , RA(KC_0) , _______  ,
     _______  , _______  , _______  , _______  , DE_COLN  , DE_DOT   , _______  ,            _______  , _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , XXXXXXX  , XXXXXXX  , _______  ,            KC_BSPC  , KC_ENT   , _______  , XXXXXXX  , XXXXXXX  , _______  , _______
+    _______  , _______  , _______  , _______  , XXXXXXX  , XXXXXXX  , _______  ,            DE_BSLS  , _______  , _______  , XXXXXXX  , XXXXXXX  , _______  , _______
   ),
 
   [5] = LAYOUT_universal(
@@ -105,6 +105,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 	}
 
 	return true;
+}
+
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+	switch (keycode) {
+		case LA(DE_A):
+		case LC(DE_S):
+		case LG(DE_D):
+		case LS(DE_F):
+		case RS(DE_J):
+		case RG(DE_K):
+		case RC(DE_L):
+		case LA(KC_1):
+		case LC(KC_2):
+		case LG(KC_3):
+		case LS(KC_4):
+		case RS(KC_7):
+		case RG(KC_8):
+		case RC(KC_9):
+		case LT(1,KC_SPC):
+		case LSFT_T(KC_ENT):
+			return true;
+		default:
+			return false;
+	}
 }
 
 const rgblight_segment_t PROGMEM my_layer_caps[] = RGBLIGHT_LAYER_SEGMENTS(
